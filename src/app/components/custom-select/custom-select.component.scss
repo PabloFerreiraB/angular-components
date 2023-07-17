@@ -1,0 +1,112 @@
+::ng-deep .custom-select {
+  width: 100%;
+
+  &.dark-theme {
+    .mat-form-field-appearance-outline .mat-form-field-outline,
+    .mat-form-field-label {
+      color: #d8d8d8 !important;
+    }
+
+    .mat-form-field:not(.mat-focused):not(.mat-form-field-invalid).mat-form-field-appearance-outline:hover .mat-form-field-outline {
+      color: #d8d8d8 !important;
+    }
+
+    .mat-form-field:not(.mat-focused):not(.mat-form-field-invalid) .mat-form-field-wrapper:hover .mat-form-field-label {
+      color: #d8d8d8 !important;
+    }
+
+    .mat-select-value {
+      color: #d8d8d8 !important;
+    }
+
+    .mat-form-field.mat-form-field-disabled mat-label::after,
+    .mat-form-field.mat-form-field-readonly mat-label::after {
+      background-color: #313133 !important;
+    }
+  }
+
+  .mat-select-trigger:has(mat-chip) {
+    height: inherit !important;
+    padding-right: 10px;
+  }
+
+  .mat-chip-list-wrapper {
+    user-select: none;
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    margin: 0px;
+    margin-left: -3px;
+
+    /* width */
+    &::-webkit-scrollbar {
+      height: 3px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #e8c218;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #e8c218;
+    }
+  }
+
+  .mat-chip-list-wrapper::after {
+    display: none;
+  }
+
+  .mat-form-field-infix:has(mat-chip) {
+    padding: 0px 0px 4px 0 !important;
+  }
+
+
+  .mat-standard-chip {
+    margin-bottom: 2px !important;
+    padding-left: 7px !important;
+    padding-right: 5px !important;
+    min-height: 27px;
+  }
+}
+
+::ng-deep .custom-select-panel {
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: gray;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #363636;
+    border-radius: 10px;
+    min-height: 50px;
+    max-height: 50px;
+    border: 3px solid gray;
+
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #363636;
+    width: 2px;
+  }
+}
+
+:host {
+  .mat-select-value {
+    max-width: 100% !important;
+  }
+}

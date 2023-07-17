@@ -1,0 +1,65 @@
+<ng-container [formGroup]="customForm">
+  <mat-form-field
+    floatLabel="always"
+    class="custom-select w-100"
+    appearance="outline"
+    [ngClass]="{ 'dark-theme': darkTheme }"
+  >
+    <mat-label>{{ label }}</mat-label>
+    <mat-select
+      #select
+      disableOptionCentering
+      panelClass="custom-select-panel"
+      [placeholder]="placeholder"
+      [multiple]="multiple"
+      [required]="required"
+      [formControlName]="customFormControl"
+      (selectionChange)="selectionChange.emit($event)"
+      (openedChange)="openedChange.emit($event)"
+      (ngModelChange)="ngModelChange.emit($event)"
+      [compareWith]="compareWith"
+    >
+      <mat-select-trigger *ngIf="isChipSelect">
+        <mat-chip-grid #elemt (mousewheel)="mouseWheel($event, elemt)">
+          <mat-chip
+            *ngFor="let value of customForm.get(customFormControl)!.value"
+            [disabled]="isChipDisabled(value)"
+            (removed)="removeChip(value)"
+          >
+            <ng-container *ngIf="lookup(value) as description">
+              {{ description }}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </ng-container>
+          </mat-chip>
+        </mat-chip-grid>
+      </mat-select-trigger>
+
+      <mat-select-filter
+        *ngIf="
+          select.focused && list?.length && (alwaysShowFilter || list.length > showFilterMinItems)
+        "
+        [showSpinner]="showSpinner"
+        [displayMember]="propertyName"
+        [array]="list"
+        (filteredReturn)="onFilterList($event)"
+        noResultsMessage="Nenhum resultado encontrado"
+        placeholder="Pesquisar..."
+      >
+      </mat-select-filter>
+      <mat-option
+        *ngIf="!required && !multiple && nullDescription"
+        (click)="nullOptionClick()"
+        [value]="null"
+      >
+        {{ nullDescription }}
+      </mat-option>
+      <mat-option
+        *ngFor="let value of filteredList"
+        [disabled]="isChipDisabled(propertyId == '@' ? value : value[propertyId])"
+        [value]="propertyId == '@' ? value : value[propertyId]"
+      >
+        {{ propertyName == '@' ? value : value[propertyName] }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</ng-container>
