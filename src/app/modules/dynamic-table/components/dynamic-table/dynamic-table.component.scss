@@ -1,0 +1,207 @@
+@import "/src/scss/variables.scss";
+
+.mat-mdc-table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+
+  thead {
+    font-size: $font-default;
+    font-weight: bold;
+  }
+
+  .overflow-detect .overflow-detect-span {
+    display: block;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+.mat-mdc-row:nth-child(even) {
+  background-color: $white;
+}
+
+.mat-mdc-row:nth-child(odd) {
+  background-color: $light-accent;
+}
+
+// Início - Detalhes da tabela
+.mat-mdc-row.sipol-even-row {
+  background-color: $white;
+}
+
+.mat-mdc-row.sipol-odd-row {
+  background-color: $light-accent;
+}
+
+.mat-column-actions {
+  text-align: center;
+  font-size: $font-default;
+  font-weight: bold;
+  border: none;
+  position: relative;
+  width: 12% !important;
+
+  &.my_class {
+    // background: red !important;
+  }
+}
+
+// Detail Expand
+.detail-row {
+  overflow: hidden !important;
+}
+
+.detail-row {
+  height: 0 !important;
+}
+
+// Configuração para os actions
+td:last-child.mat-column-acoes,
+td:last-child.mat-column-actions {
+  padding: 0px;
+  text-align: center;
+  border: 0;
+
+  .mat-icon {
+    margin: 0 6px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+}
+
+th:last-child.mat-header-cell.mat-column-acoes,
+th:last-child.mat-header-cell.mat-column-actions {
+  width: auto;
+  text-align: center;
+  padding: 0rem 1.5rem 0px 1.5rem;
+  border: 0;
+  background: red !important;
+
+  .mat-sort-header-container {
+    justify-content: center;
+  }
+
+  .mat-sort-header-content {
+    text-align: left !important;
+  }
+}
+
+.mat-table .mat-row:last-child .mat-cell {
+  border-bottom: 0;
+}
+
+
+.tab-row-menu {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  top: 0;
+  background-color: $dark;
+  padding: 4px;
+  width: max-content;
+  font-weight: normal;
+  margin-right: 16px;
+  right: 0;
+  z-index: 9999 !important;
+  border-radius: 8px;
+  color: $white;
+
+  &:hover {
+    mat-icon {
+      &:not(:hover) {
+        &:not(.cancel) {
+          color: $medium;
+        }
+      }
+
+      &:hover {
+        &:not(.cancel) {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  mat-icon {
+    color: $white;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: $font-default;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .cancel {
+    margin-right: 8px;
+    color: $red;
+  }
+
+  .label-txt {
+    color: $light;
+    display: inline-flex;
+    border-right: 1px solid $white;
+    padding-right: 16px;
+    padding-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+.footer-row {
+  background: $light-accent;
+  margin: 0 auto;
+  border-top-width: 1.1px !important;
+  border-top-style: solid !important;
+  border-bottom-width: 1.1px !important;
+  border-bottom-style: solid !important;
+  border-bottom-color: $light-medium !important;
+  border-top-color: $light-medium !important;
+}
+
+.footer-row:hover {
+  background: $light-medium;
+}
+
+.footer-row p {
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  margin: 4px 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-row p span {
+  vertical-align: super;
+  padding-left: 10px;
+}
+
+.no-data-row {
+  // display: flex;
+  // justify-content: center;
+  background: $light-accent;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.no-data-row p {
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 4px;
+}
+
+.no-data-row p span {
+  vertical-align: super;
+  padding: 10px;
+}
+
+.no-data-row p mat-icon {
+  margin-top: 10px;
+}

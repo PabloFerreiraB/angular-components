@@ -1,16 +1,45 @@
 <div class="container">
-  <app-custom-select
-    label="My Select"
-    customFormControl="mySelect"
-    [list]="list"
-    [customForm]="form"
-    [propertyId]="'id'"
-    [propertyName]="'description'"
-    placeholder="Selecionar"
-    [required]="true"
-    [multiple]="false"
-    [showSpinner]="true"
-    [isChipSelect]="true"
-  >
-  </app-custom-select>
+  <!-- <form class="my-3" [formGroup]="form" *ngIf="form">
+    <app-custom-select
+      label="My Select"
+      customFormControl="mySelect"
+      [list]="list"
+      [customForm]="form"
+      [propertyId]="'id'"
+      [propertyName]="'description'"
+      placeholder="Selecionar"
+      [required]="true"
+      [multiple]="false"
+      [showSpinner]="true"
+      [isChipSelect]="true"
+    >
+    </app-custom-select>
+
+    <app-upload-file
+      [showElement]="false"
+      [fileName]="filename"
+      (emitFile)="addFile($event)"
+      [accept]="'*.*'"
+      [supportedFiles]="[
+        'pg',
+        'png',
+        'jpg',
+        'jpeg',
+        'gif',
+        'tiff',
+        'bpg',
+        'svg',
+        'psd',
+        'webp',
+        'raw',
+        'bmp',
+        'pdf'
+      ]"
+      [isVisualization]="false"
+      (doDownload)="doDownload()"
+    >
+    </app-upload-file>
+  </form> -->
+
+  <app-demo-table></app-demo-table>
 </div>

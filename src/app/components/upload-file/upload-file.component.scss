@@ -1,0 +1,38 @@
+::ng-deep {
+  .sipol-upload-file {
+    .mat-form-field-infix {
+      padding: 0;
+    }
+
+    .mat-chip-list-wrapper {
+      justify-content: space-between;
+    }
+
+    .mat-chip-list-wrapper .mat-standard-chip {
+      margin: 0 4px 7px 4px;
+      min-height: 30px;
+    }
+
+    .mat-chip-list-wrapper::after {
+      display: none;
+    }
+
+    .mat-chip.mat-standard-chip.mat-chip-disabled {
+      margin: 4px 4px 10px 4px;
+    }
+
+    .margin-top-neg {
+      margin-top: -10px;
+    }
+  }
+}
+
+.text-name-file {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.input_fileupload--hidden {
+  display: none;
+}

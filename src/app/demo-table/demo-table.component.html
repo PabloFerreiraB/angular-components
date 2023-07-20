@@ -1,0 +1,108 @@
+<div class="w-100">
+  <sipol-dynamic-table
+    [groupedActions]="false"
+    [expandedDetail]="false"
+    [dragabble]="false"
+    [select]="false"
+    [columns]="columns"
+    [rows]="rows"
+    [pageIndex]="pagination.pageIndex"
+    [pageSize]="pagination.pageSize"
+    [totalElements]="pagination.length"
+    [actions]="actions"
+    (actionClick)="runAction($event)"
+    (sortChange)="getAll($event)"
+    (pageChange)="pageData($event)"
+  >
+    <ng-container *dynamicTableColumnDef="'status'; let element">
+      {{ element.status == 'A' ? 'Ativo' : 'Inativo' }}
+    </ng-container>
+
+    <!-- <ng-container *dynamicTableColumnDef="'cnpj'; let element">
+      {{ element.cnpj | mask: '00.000.000/0000-00' }}
+    </ng-container>
+
+    <ng-container *dynamicTableColumnDef="'vlUnitario'; let element">
+      <span [matTooltip]="element.vlUnitario"> {{ element.vlUnitario | currency: 'BRL' }}</span>
+    </ng-container>
+
+    <ng-container *dynamicTableColumnDef="'principal'; let element">
+      <mat-radio-group [ngModel]="element.principal">
+        <mat-radio-button
+          class="justify-content-center"
+          [id]="element.principal"
+          [value]="true"
+          (change)="changeIsPrincipal($event, element)"
+        >
+        </mat-radio-button>
+      </mat-radio-group>
+    </ng-container>
+
+    <ng-container *dynamicTableColumnDef="'dtValidade'; let element">
+      {{ element.dtValidade | date: 'dd/MM/YYYY' }}
+    </ng-container>
+
+    <ng-container *dynamicTableColumnDef="'nrDocumento'; let element">
+      <ng-container *ngIf="element.tipoDocumentoId === 12; else defaultValue">
+        {{ element.nrDocumento | mask: 'X.XX.XX.XXX-X||X.XX.XX.XXX-X/X' }}
+      </ng-container>
+      <ng-template #defaultValue>
+        {{ element.nrDocumento }}
+      </ng-template>
+    </ng-container> -->
+  </sipol-dynamic-table>
+
+  <!-- <sipol-dynamic-table
+    [expandedDetail]="true"
+    [positionColumnIconExpandedDetail]="1"
+    [columns]="columns"
+    [rows]="rows"
+    [pageSize]="pagination.pageSize"
+    [totalElements]="pagination.length"
+    [actions]="actions"
+    [menuCollapsedColumnAttr]="menuCollapsedColumnAttr"
+    (actionClick)="runAction($event)"
+    (rowClickOpenDetail)="clickOpenDetail($event)"
+    (sortChange)="sortData($event)"
+    (pageChange)="pageData($event)"
+  >
+    <ng-container *dynamicTableColumnDef="'warning'; let element">
+      <mat-icon
+        [matTooltip]="
+          element.pendenciaModulo + element.pendenciaDisciplina + element.pendenciaPlanoAula
+        "
+        class="warn"
+        matTooltipClass="tooltip-br"
+        *ngIf="element.hasPendencia"
+        >warning</mat-icon
+      >
+    </ng-container>
+
+    <ng-container *dynamicTableColumnDef="'subtable'; let element; let i = dataIndex">
+      <sipol-dynamic-table
+        class="acadepol-table-detail"
+        [expandedDetail]="false"
+        [header]="false"
+        [columns]="subColumns"
+        [rows]="element"
+        [actions]="subActions"
+        [actionLightTheme]="true"
+        [pagination]="false"
+        [actionColumnAttr]="actionColumnAttr"
+        (actionClick)="runActionSubTable($event, rows[i])"
+      >
+        <ng-container *dynamicTableColumnDef="'warning'; let element">
+          <mat-icon
+            [matTooltip]="
+              element.pendenciaModulo + element.hasMultiple + element.pendenciaConfiguracao
+            "
+            class="warn warning-sub-table"
+            matTooltipClass="tooltip-br"
+            *ngIf="element.hasPendencia"
+            >warning</mat-icon
+          >
+        </ng-container>
+      </sipol-dynamic-table>
+    </ng-container>
+  </sipol-dynamic-table> -->
+</div>

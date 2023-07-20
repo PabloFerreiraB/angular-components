@@ -1,0 +1,53 @@
+<section class="sipol-upload-file">
+  <button
+    *ngIf="showElement || !fileName"
+    [disabled]="isVisualization"
+    (click)="onClickUploadFile()"
+    class="w-100 mb-4"
+    type="button"
+    mat-flat-button
+    color="accent"
+  >
+    <mat-icon aria-hidden="false" aria-label="upload de arquivo"> cloud_upload </mat-icon>
+    {{ title }}
+  </button>
+  <input
+    #fileUpload
+    type="file"
+    [accept]="accept"
+    class="input_fileupload--hidden"
+    (change)="onFileSelected($event)"
+    [(ngModel)]="inputFileName"
+    [ngModelOptions]="{ standalone: true }"
+  />
+
+  <mat-form-field
+    *ngIf="fileName || (isEdit && fileName) || (isVisualization && fileName)"
+    floatLabel="always"
+    class="w-100"
+    appearance="outline"
+  >
+    <mat-label>Fazer upload de arquivo</mat-label>
+    <mat-chip-set [disabled]="isVisualization" #chipList aria-label="Fruit selection">
+      <mat-chip
+        [matTooltip]="fileName"
+        (click)="onClickUploadFile()"
+        class="flex-fill justify-content-between"
+        color="primary"
+        (removed)="remove()"
+      >
+        <div class="text-name-file cursor-pointer">
+          {{ fileName }}
+        </div>
+        <div *ngIf="!isVisualization" class="d-flex">
+          <button matChipRemove>
+            <mat-icon class="text-white">highlight_off</mat-icon>
+          </button>
+        </div>
+      </mat-chip>
+      <button (click)="download()" matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon class="margin-top-neg">cloud_download</mat-icon>
+      </button>
+    </mat-chip-set>
+  </mat-form-field>
+</section>

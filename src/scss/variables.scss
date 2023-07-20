@@ -1,0 +1,97 @@
+$light: #e5e5e5;
+$light-accent: #F4F4F4;
+$light-medium: #d8d8d8;
+$medium: #969696;
+$medium-dark: #646464;
+$black: #000;
+$dark: #363636;
+$dark-hard-01: #313133;
+$dark-hard-02: #222222;
+$linear-dark: linear-gradient(90deg, #000000 0%, #363636 50.42%, #000000 100%);
+
+$white: #ffffff;
+$yellow: #e8c218;
+$yellow-hover: #d6b316;
+$green: #41d33e;
+$green-hover: #35b233;
+$orange: #ff8b00;
+$orange-hover: #e87e00;
+$blue: #1ba2e8;
+$blue-hover: #1891d0;
+$gradient-button: linear-gradient(270deg, #00dbff -0.04%, #0063c9 100.01%);
+$red: #e33e38;
+$red-hover: #c63631;
+$alt: #8e38e3;
+$alt-hover: #762dbe;
+
+$font-small-res: 14px;
+$font-default: 16px;
+$font-medium-res: $font-default;
+
+$media-mobile-res: 575px;
+$media-small-res: 1366px;
+$media-big-res: 1920px;
+
+$sipol-primary: (
+  50: $black,
+  100: $black,
+  200: $black,
+  300: $black,
+  400: $black,
+  500: $black,
+  600: $black,
+  700: $black,
+  800: $black,
+  900: $black,
+  A100: $black,
+  A200: $black,
+  A400: $black,
+  A700: $black,
+  contrast: (50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  ),
+);
+
+$sipol-accent: (
+  50: #f4f4f4,
+  100: #f4f4f4,
+  200: #f4f4f4,
+  300: #f4f4f4,
+  400: #f4f4f4,
+  500: #f4f4f4,
+  600: #f4f4f4,
+  700: #f4f4f4,
+  800: #f4f4f4,
+  900: #f4f4f4,
+  A100: #f4f4f4,
+  A200: #f4f4f4,
+  A400: #f4f4f4,
+  A700: #f4f4f4,
+  contrast: (50: #646464,
+    100: #646464,
+    200: #646464,
+    300: #646464,
+    400: #646464,
+    500: #646464,
+    600: #646464,
+    700: #646464,
+    800: #646464,
+    900: #646464,
+    A100: #646464,
+    A200: #646464,
+    A400: #646464,
+    A700: #646464,
+  ),
+);
